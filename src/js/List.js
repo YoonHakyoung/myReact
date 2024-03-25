@@ -1,23 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../css/List.css';
+import '../css/List.css'; // 수정된 CSS 파일 경로로 변경
 
 function EventInfo({ event }) {
   const { title, date, place, org_name, use_trgt, use_fee, org_link, main_img, rgstdate } = event;
-  
+  const [isInterested, setIsInterested] = useState(false);
+
+  const toggleInterest = () => {
+    setIsInterested(!isInterested);
+  };
+
+  const handleBooking = () => {
+    const confirmed = window.confirm('예매하시겠습니까?');
+    if (confirmed) {
+      window.alert('예매되었습니다!');
+      // 예매가 확인되었을 때 실행할 작업 추가
+    }
+  };
+
   return (
-    <div className="event-info" style={{ display: 'flex', alignItems: 'center' }}>
-      <img src={main_img} alt="Main Image" style={{ width: '300px', height: '450px', marginRight: '20px' }} />
-      <div className="content" style={{ flexGrow: 1 }}>
-        <h3 style={{ margin: '20px', fontFamily: 'Pretendard-Regular', fontWeight: '600', fontSize: '30px' }}>{title}</h3>
+    <div className="event-info">
+      <img src={main_img} alt="Main Image" />
+      <div className="content">
+        <h3 className="info-title">{title}</h3>
         <div className="row">
           <div className="col-sm-3"><strong>날짜</strong></div>
           <div className="col-sm-9">{date}</div>
         </div>
-        <hr style={{ margin: '10px' }} />
+        <hr />
         <div className="row">
           <div className="col-sm-3"><strong>장소</strong></div>
-          <div className="col-sm-9">{place} <a href={org_link} target="_blank">지도보기</a></div>
+          <div className="col-sm-9">{place} <a href={org_link} target="_blank" rel="noopener noreferrer">지도보기</a></div>
         </div>
         <hr />
         <div className="row">
@@ -37,17 +50,11 @@ function EventInfo({ event }) {
         <hr />
         <div className="row">
           <div className="col-sm-3"><strong>작품 소개</strong></div>
-          <div className="col-sm-9"><a href={org_link}>보러가기</a></div>
+          <div className="col-sm-9"><a href={org_link} target="_blank" rel="noopener noreferrer">보러가기</a></div>
         </div>
-        <hr />
         <div className="row">
-          <div className="col-sm-3"><strong>신청일</strong></div>
-          <div className="col-sm-9">{rgstdate}</div>
-        </div>
-        <hr />
-        <div className="row">
-          <button type="button" className="btn btn-default btn-sm col-sm-5 interest-btn" style={{ height: '50px', fontSize: '15px', marginRight: '5px' }}>⭐ 관심상품</button>
-          <button type="button" className="btn btn-default btn-sm col-sm-5" data-toggle="modal" data-target="#myModal" style={{ height: '50px', fontSize: '15px' }}>🎫 예매하기</button>
+          <button type="button" className={`btn btn-default btn-sm col-sm-5 interest-btn ${isInterested ? 'interested' : ''}`} onClick={toggleInterest}>⭐ 관심상품</button>
+          <button type="button" className="btn btn-default btn-sm col-sm-5 toggle" onClick={handleBooking}>🎫 예매하기</button>
         </div>
       </div>
     </div>
@@ -123,14 +130,15 @@ function ConcertList() {
           {events.map(event => (
             <EventInfo key={event.id} event={event} />
           ))}
+          <div id="pagination" className="text-center">
+            <button onClick={prevPage} className="btn btn-default">이전</button>
+            <span id="currentPage">{currentPage}</span>
+            <button onClick={nextPage} className="btn btn-default">다음</button>
+          </div>
         </div>
-        <div id="pagination" className="text-center">
-          <button onClick={prevPage} className="btn btn-default">이전</button>
-          <span id="currentPage">{currentPage}</span>
-          <button onClick={nextPage} className="btn btn-default">다음</button>
-        </div>
+        
       </div>
     );
   }
   
-  export default ConcertList;
+export default ConcertList;

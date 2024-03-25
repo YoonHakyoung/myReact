@@ -4,7 +4,6 @@ import '../css/App.css';
 import Nav from './nav';
 import Header from './Header';
 import Router from './Router';
-import MainPage from './main_new';
 
 function App() {
   return (

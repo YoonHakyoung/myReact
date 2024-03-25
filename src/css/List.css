@@ -1,9 +1,73 @@
+.title {
+  margin-bottom: 30px;
+}
+.event-info .content .row .interested {
+  background-color: #45a049; /* 변경하고자 하는 색상 */
+  color: white; /* 버튼 텍스트 색상 변경 (배경색과 대비되도록) */
+}
 .event-info {
-    display: flex;
-  }
-  
-  .event-info img {
-    flex: 0 0 auto; /* 이미지의 크기가 자동으로 조절되지 않도록 고정 */
-    margin-right: 20px; /* 이미지와 내용 사이의 간격 설정 */
-  }
-  
+  display: flex;
+  max-width: 1000px; /* 수정된 값 */
+  margin: auto; /* 중앙 정렬을 위해 추가 */
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.event-info img {
+  width: 300px;
+  height: 450px;
+  margin-right: 20px;
+}
+
+.event-info .content {
+  flex-grow: 1;
+}
+
+.event-info .content .info-title {
+  margin: 20px 0 25px; /* 상하 여백 추가 */
+}
+
+.event-info .content .row {
+  margin-bottom: 10px; /* 각 정보 아래 여백 추가 */
+}
+
+.event-info .content .row hr {
+  margin: 10px 0; 
+}
+
+.event-info .content .row .col-sm-3 {
+  text-align: center; 
+}
+
+.event-info .content .row .col-sm-9 {
+  text-align: left; 
+}
+.event-info .content .row .btn {
+  font-size: 14px;
+  margin-top: 15px;
+}
+.event-info .content .row .interest-btn {
+  margin-left: 10%;
+}
+.event-info .content .row .toggle {
+  margin-left: 3%;
+}
+
+#pagination {
+  margin: 30px auto; /* 중앙 정렬을 위해 수정된 값 */
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬을 위해 추가 */
+}
+
+#pagination button {
+  margin: 0 10px; /* 좌우 여백 추가 */
+}
+
+#currentPage {
+  margin: 0 10px; /* 좌우 여백 추가 */
+}
+
+.content hr {
+  margin: 15px;
+}

@@ -1,0 +1,79 @@
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pretendard-Regular';
+}
+
+.event-info {
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.event-info img {
+    width: 300px;
+    height: 450px;
+    margin-right: 20px; /* 이미지와 내용 사이 간격 */
+}
+
+.event-info button {
+    margin: 10px 10px 0;
+}
+
+#eventsList {
+    margin: 0 100px;
+}
+
+#currentPage {
+    margin: 0 25px;
+}
+
+@media (min-width: 768px) {
+    .event-info > .row > .col-sm-3 {
+        width: 100px;
+    }
+}
+
+hr {
+    margin: 10px !important;
+}
+
+.title {
+    text-align: center;
+    font-family: Pretendard-Regular;
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.row {
+    font-size: 15px;
+    font-family: Pretendard-Regular;
+}
+
+.col-sm-3 {
+    text-align: center;
+}
+
+#pagination {
+    margin-bottom: 30px;
+    font-family: Pretendard-Regular;
+}
+
+.interest-btn {
+    background-color: #f0f0f0; /* 기본 색상 */
+}
+
+.interest-btn.interest-selected {
+    background-color: #f7e0d1; /* 선택된 경우 색상 변경 */
+}

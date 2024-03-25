@@ -1,5 +1,3 @@
-// 회원가입
-
 import React, { useState } from 'react';
 import '../css/RegisterForm.css';
 
@@ -39,9 +37,9 @@ const RegisterForm = () => {
 
     return (
         <div className="form-container">
-            <h2>SIGN UP</h2>
+            <h2 style={{ textAlign: 'center' }}>SIGN UP</h2>
             <form onSubmit={handleSubmit}>
-                <div className="container">
+                <div className="input-container">
                     <label htmlFor="name"><b>Name</b></label>
                     <input type="text" id="name" placeholder="사용자 이름을 입력하세요" value={name} onChange={(e) => setName(e.target.value)} required />
 
@@ -51,10 +49,10 @@ const RegisterForm = () => {
                     <label htmlFor="password"><b>Password</b></label>
                     <input type="password" id="password" placeholder="비밀번호를 입력하세요" value={password} onChange={(e) => setPassword(e.target.value)} required />
 
-                    <input type="checkbox" id="admin" checked={isAdmin} onChange={(e) => setIsAdmin(e.target.checked)} />
                     <label htmlFor="admin">Admin</label>
+                    <input type="checkbox" id="admin" checked={isAdmin} onChange={(e) => setIsAdmin(e.target.checked)} />
 
-                    <button type="submit">SIGN UP</button>
+                    <button type="submit" className="register-button">SIGN UP</button>
                 </div>
             </form>
             <div className="message" id="registerMessage"></div>
@@ -63,4 +61,3 @@ const RegisterForm = () => {
 };
 
 export default RegisterForm;
-
