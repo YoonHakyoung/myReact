@@ -36,23 +36,23 @@ const LoginForm = () => {
             <h2 style={{ textAlign: 'center' }}>SIGN IN</h2>
             <form onSubmit={handleSubmit}>
                 <div style={{ padding: '16px' }}>
-                    <label for="email"><b>E-Mail</b></label>
+                    <label htmlFor="email"><b>E-Mail</b></label>
                     <input type="text" id="email" placeholder="이메일을 입력하세요" value={email} onChange={(e) => setEmail(e.target.value)} required />
             
-                    <label for="password"><b>Password</b></label>
+                    <label htmlFor="password"><b>Password</b></label>
                     <input type="password" id="password" placeholder="비밀번호를 입력하세요" value={password} onChange={(e) => setPassword(e.target.value)} required />
             
                     <button type="submit">SIGN IN</button>
                 </div>
     
                 <div style={{ textAlign: 'center', marginTop: '12px' }}>
-                    <p>계정이 없으신가요? <a href="/register">회원가입하기</a>.</p>
+                    <p>계정이 없으신가요? <a href="/register" rel="noopener noreferrer">회원가입하기</a>.</p>
                 </div>
             </form>
             <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                <a href="https://www.facebook.com/yourpage" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
             </div>
         </div>
     );
