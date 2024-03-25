@@ -1,0 +1,21 @@
+.slider {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 한 줄에 4개의 이미지 */
+    gap: 10px; /* 이미지 사이의 간격 조절 */
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.slider img {
+    width: 100%;
+}
+
+.title {
+    font-size: 30px;
+}
