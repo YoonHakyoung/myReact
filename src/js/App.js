@@ -7,8 +7,8 @@ import Router from './Router';
 
 function App() {
   return (
-    <h1> 배포 테스트 </h1>
     <div className="App">
+      <h1> 배포 테스트 </h1>
       <Header />
       <Nav />
       <Router />
