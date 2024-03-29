@@ -19,16 +19,23 @@ const LoginForm = () => {
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(loginData));
 
-        // 서버 응답 처리
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    console.log("로그인 성공");
+                    // 서버로부터의 응답이 성공적으로 도착한 경우
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.message === "success") {
+                        alert("로그인이 성공적으로 완료되었습니다.");
+                        console.log("로그인 성공");
+                    } else {
+                        console.log("서버 응답: 성공 메시지를 받았으나 처리 실패");
+                    }
                 } else {
+                    // 서버로부터의 응답이 실패한 경우
                     console.log("로그인 실패");
                 }
             }
-        };
+        };        
     };
 
     return (

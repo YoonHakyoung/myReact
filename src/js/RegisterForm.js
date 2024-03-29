@@ -17,22 +17,31 @@ const RegisterForm = () => {
             admin : isAdmin
         };
 
+        // XMLHttpRequest 객체를 사용하여 POST 요청
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/user/register", true);
+        xhr.open("POST", "http://127.0.0.1:8000/user/regsiter/", true);
         xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify(registerData));
+        xhr.send(JSON.stringify(registerData)); // registerData 객체를 JSON 문자열로 변환하여 서버로 전송
 
         console.log(registerData);
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    console.log("회원가입 성공");
+                    // 서버로부터의 응답이 성공적으로 도착한 경우
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.message === "success") {
+                        alert("회원가입이 성공적으로 완료되었습니다.");
+                        console.log("회원가입 성공");
+                    } else {
+                        console.log("서버 응답: 성공 메시지를 받았으나 처리 실패");
+                    }
                 } else {
+                    // 서버로부터의 응답이 실패한 경우
                     console.log("회원가입 실패");
                 }
             }
-        };
+        };        
     };
 
     return (
