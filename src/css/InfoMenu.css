@@ -1,0 +1,48 @@
+/* InfoMenu.css */
+
+.menu-container {
+    float: left;
+    width: 20%;
+    background-color: #f8f9fa; /* 메뉴 컨테이너 배경색 */
+    padding-left: 10px;
+}
+  
+  .menu {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #e9ecef; /* 메뉴 항목 배경색 */
+    margin-bottom: 5px;
+  }
+  
+  .menu li:hover {
+    background-color: #ced4da; /* 메뉴 항목 호버 배경색 */
+  }
+  
+  .menu li.active {
+    background-color: #282c34; /* 활성화된 메뉴 항목 배경색 */
+    color: white; /* 활성화된 메뉴 항목 글자색 */
+  }
+  
+  .content-container {
+    float: right;
+    width: 80%;
+  }
+  
+  .list-container {
+    margin-top: 20px;
+  }
+  
+  .list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .list li {
+    margin-bottom: 5px;
+  }
+  

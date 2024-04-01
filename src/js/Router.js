@@ -3,6 +3,7 @@ import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
 import MainPage from './main_new';
 import ConcertList from './List';
+import MyPage from './MyPage';
 
 const Router = () => {
     return (
@@ -11,6 +12,7 @@ const Router = () => {
             <Route path='/list' element={<ConcertList />} />
             <Route path="/signin" element={<LoginForm />} />
             <Route path="/signup" element={<RegisterForm />} /> 
+            <Route path='/mypage' element={<MyPage />}/>
         </Routes>
     );
 }

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import '../css/LoginForm.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,12 +23,16 @@ const LoginForm = () => {
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
+                sessionStorage.setItem('userId', loginData.email);
                 if (xhr.status === 200) {
                     // 서버로부터의 응답이 성공적으로 도착한 경우
                     const response = JSON.parse(xhr.responseText);
                     if (response.message === "success") {
+                        // 세션 스토리지에 사용자 아이디 저장
+                        sessionStorage.setItem('userId', loginData.email);
                         alert("로그인이 성공적으로 완료되었습니다.");
                         console.log("로그인 성공");
+                        navigate("/"); // 홈페이지로 이동하도록 수정
                     } else {
                         console.log("서버 응답: 성공 메시지를 받았으나 처리 실패");
                     }
@@ -35,7 +41,7 @@ const LoginForm = () => {
                     console.log("로그인 실패");
                 }
             }
-        };        
+        };       
     };
 
     return (
@@ -51,16 +57,7 @@ const LoginForm = () => {
             
                     <button type="submit" className="login-button">SIGN IN</button>
                 </div>
-    
-                <div className="no-account">
-                    <p>계정이 없으신가요? <a href="/register" rel="noopener noreferrer">회원가입하기</a>.</p>
-                </div>
             </form>
-            <div className="social-icons">
-                <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
-                <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-            </div>
         </div>
     );
 };

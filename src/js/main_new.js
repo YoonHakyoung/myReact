@@ -28,6 +28,7 @@ const MainPage = () => {
                     // eslint-disable-next-line jsx-a11y/img-redundant-alt
                     <img key={index} src={image} alt={`Main Image ${index + 1}`} />
                 ))}
+                
             </div>
         </div>
     );

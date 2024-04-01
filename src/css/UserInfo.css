@@ -1,0 +1,27 @@
+.my-page-container {
+    padding: 40px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; 수평 가운데 정렬 */
+}
+
+.user-info p {
+    margin: 0; /* 기본 마진 제거 */
+}
+
+.user-name {
+    font-size: 30px;
+}
+
+.user-email {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #f0f0f0; /* 배경색 설정 */
+}
+
+p.user-email {
+    margin-left: 20px;
+}
