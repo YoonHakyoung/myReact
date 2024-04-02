@@ -14,9 +14,10 @@
   
   .menu li {
     cursor: pointer;
-    padding: 10px;
+    padding: 15px;
     background-color: #e9ecef; /* 메뉴 항목 배경색 */
     margin-bottom: 5px;
+    height: 50px;
   }
   
   .menu li:hover {
@@ -46,3 +47,33 @@
     margin-bottom: 5px;
   }
   
+  /* InfoMenu.css */
+
+.styled-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 0 15px 0 15px;
+  font-size: 1.2em; /* 글씨 크기 크게 설정 */
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.styled-table thead tr {
+  background-color: #282c34;
+  color: #ffffff;
+  text-align: center; /* 열 제목 가운데 정렬 */
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 15px;
+  text-align: center; /* 셀 가운데 정렬 */
+}
+
+.styled-table tbody tr {
+  border-bottom: 2px solid #282c34;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: none; /* 마지막 행의 아래 선 제거 */
+}

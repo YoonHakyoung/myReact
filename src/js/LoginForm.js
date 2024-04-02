@@ -17,7 +17,7 @@ const LoginForm = () => {
 
         // 서버로 로그인 데이터를 전송
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://127.0.0.1:8000/user/login/", true);
+        xhr.open("POST", "http://211.183.3.100:30000/user/login/", true);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(loginData));
 

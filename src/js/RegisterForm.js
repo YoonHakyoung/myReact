@@ -19,7 +19,7 @@ const RegisterForm = () => {
 
         // XMLHttpRequest 객체를 사용하여 POST 요청
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://127.0.0.1:8000/user/regsiter/", true);
+        xhr.open("POST", "http://211.183.3.100:30000/user/regsiter/", true);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(registerData)); // registerData 객체를 JSON 문자열로 변환하여 서버로 전송
 

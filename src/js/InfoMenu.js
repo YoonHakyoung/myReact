@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../css/InfoMenu.css';
 
 const reservationData = [
-  { id: 1, name: 'John', status: 'Confirmed' },
-  { id: 2, name: 'Alice', status: 'Pending' },
-  { id: 3, name: 'Bob', status: 'Confirmed' }
+  { date : '2024/04/01', place : '세종대극장'},
+  { date : '2024/04/01', place : '세종대극장'},
+  { date : '2024/04/01', place : '세종대극장'}
 ];
 
 const interestData = [
@@ -15,12 +15,22 @@ const interestData = [
 
 const ReservationList = () => (
   <div>
-    <h2>Reservation Status</h2>
-    <ul>
-      {reservationData.map(item => (
-        <li key={item.id}>{item.name} - {item.status}</li>
-      ))}
-    </ul>
+    <table className="styled-table">
+    <thead>
+        <tr>
+        <th>Date</th>
+        <th>Place</th>
+        </tr>
+    </thead>
+    <tbody>
+        {reservationData.map((item, index) => (
+        <tr key={index}>
+            <td>{item.date}</td>
+            <td>{item.place}</td>
+        </tr>
+        ))}
+    </tbody>
+    </table>
   </div>
 );
 
