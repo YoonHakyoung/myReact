@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../css/main_new.css'; 
+import mainImage from '../img/mainImage.png';
 
 const MainPage = () => {
     const [mainImages, setMainImages] = useState([]);
@@ -21,14 +22,14 @@ const MainPage = () => {
     }, []);
 
     return (
-        <div>
-            <h3 className="title">티켓 오픈</h3>
+        <div className="image-container">
+            <img src={mainImage} alt="메인 이미지" />
+    
             <div className="slider">
                 {mainImages.map((image, index) => (
                     // eslint-disable-next-line jsx-a11y/img-redundant-alt
                     <img key={index} src={image} alt={`Main Image ${index + 1}`} />
                 ))}
-                
             </div>
         </div>
     );

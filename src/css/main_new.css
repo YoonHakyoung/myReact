@@ -4,6 +4,7 @@
     gap: 10px; /* 이미지 사이의 간격 조절 */
     max-width: 60%;
     margin: 0 auto;
+    position: relative; /* 슬라이드를 부모 요소를 기준으로 배치하기 위해 */
 }
 
 .image {
@@ -18,4 +19,14 @@
 
 .title {
     font-size: 30px;
+}
+
+.image-container {
+    width: 100%; /* 원하는 너비로 설정 */
+    /* height: 100px; 원하는 높이로 설정 */
+  }
+  
+img {
+    width: 100%;
+    margin-bottom: 30px;
 }
