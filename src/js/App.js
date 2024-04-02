@@ -8,7 +8,7 @@ import Router from './Router';
 function App() {
   return (
     <div className="App">
-      <h3> embold test </h3>
+      <h3> embold test 2 </h3>
       <Header />
       <Nav />
       <Router />
