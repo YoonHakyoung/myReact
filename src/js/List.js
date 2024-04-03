@@ -8,7 +8,13 @@ function EventInfo({ event }) {
 
   const toggleInterest = () => {
     setIsInterested(!isInterested);
+    if (!isInterested) {
+      window.alert('관심 상품에 추가되었습니다!');
+    } else {
+      window.alert('관심 상품에서 제거되었습니다.');
+    }
   };
+  
 
   const handleBooking = () => {
     const confirmed = window.confirm('예매하시겠습니까?');

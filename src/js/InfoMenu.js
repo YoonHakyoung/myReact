@@ -2,10 +2,23 @@ import React, { useState } from 'react';
 import '../css/InfoMenu.css';
 
 const reservationData = [
-  { date : '2024/04/01', place : '세종대극장'},
-  { date : '2024/04/01', place : '세종대극장'},
-  { date : '2024/04/01', place : '세종대극장'}
+  { 
+    date: '2024/12/07', 
+    place: '세종대극장', 
+    performance: '오페라 갈라' 
+  },
+  { 
+    date: '2024/12/05', 
+    place: '세종대극장', 
+    performance: '서울시합창단 송년음악회' 
+  },
+  { 
+    date: '2024/11/29', 
+    place: '세종대극장', 
+    performance: '서울시국악관현악단 제362회 정기연주회' 
+  }
 ];
+
 
 const interestData = [
   { id: 1, name: 'Jane', interest: 'Art' },
@@ -26,13 +39,19 @@ const ReservationList = () => (
         {reservationData.map((item, index) => (
         <tr key={index}>
             <td>{item.date}</td>
-            <td>{item.place}</td>
+            <td>
+                <div className="place">
+                    <div className="small-text">{item.place}</div>
+                    <div className="big-text">{item.performance}</div>
+                </div>
+            </td>
         </tr>
         ))}
     </tbody>
     </table>
   </div>
 );
+
 
 const InterestList = () => (
   <div>

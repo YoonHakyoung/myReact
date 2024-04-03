@@ -27,7 +27,7 @@ const UserInfo = () => {
     return (
         <div className="my-page-container">
             <div className="user-info">
-                <p className="user-name"><strong>{userInfo.name} 님 </strong> </p>
+                <p className="user-name"><strong>{userInfo.name} 님, 반갑습니다! 👋 </strong> </p>
                 <p className="user-email">{userInfo.email}</p>
             </div>
         </div>

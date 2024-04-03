@@ -77,3 +77,16 @@
 .styled-table tbody tr:last-of-type {
   border-bottom: none; /* 마지막 행의 아래 선 제거 */
 }
+
+.place {
+  display: flex;
+  flex-direction: column;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+.big-text {
+  font-size: 18px;
+}
