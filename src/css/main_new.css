@@ -24,9 +24,21 @@
 .image-container {
     width: 100%; /* 원하는 너비로 설정 */
     /* height: 100px; 원하는 높이로 설정 */
-  }
-  
-img {
+}
+
+.gif-container {
+    width: 20%; /* GIF의 원하는 너비로 설정 */
+     /* GIF를 오른쪽으로 정렬 */
+}
+
+.gif-container img {
     width: 100%;
-    margin-bottom: 30px;
+}
+
+.typed-container{
+    width: 70%;
+    display: flex;
+    margin-left: 20%; /* 가운데 정렬하는 부분 */        
+     
+    line-height: 200px; /* 텍스트를 수직 가운데 정렬하기 위해 추가 */
 }

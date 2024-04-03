@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../css/main_new.css'; 
 import mainImage from '../img/mainImage.png';
+import TypedComponent from './typedTitle';
 
 const MainPage = () => {
     const [mainImages, setMainImages] = useState([]);
+    const [gifLoaded, setGifLoaded] = useState(false); // State to track GIF loading
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,8 +25,15 @@ const MainPage = () => {
 
     return (
         <div className="image-container">
-            <img src={mainImage} alt="메인 이미지" />
-    
+            <div className="content">
+                <div className="typed-container">
+                    <TypedComponent />
+                    <div className="gif-container">
+                        <img src="https://cdn.dribbble.com/users/400493/screenshots/7322525/media/5d31d3ad11b0d9f94a4264890381a9ec.gif" alt="메인 이미지" />
+                    </div>
+                </div>
+                
+            </div>
             <div className="slider">
                 {mainImages.map((image, index) => (
                     // eslint-disable-next-line jsx-a11y/img-redundant-alt
