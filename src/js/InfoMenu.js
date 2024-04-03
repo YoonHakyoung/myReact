@@ -19,11 +19,10 @@ const reservationData = [
   }
 ];
 
-
 const interestData = [
-  { id: 1, name: 'Jane', interest: 'Art' },
-  { id: 2, name: 'Doe', interest: 'Music' },
-  { id: 3, name: 'Sam', interest: 'Books' }
+  { id: 1, image: 'https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=a6cb4e5a9b5b404e83454b084d88a399&thumb=Y'},
+  { id: 2, image: 'https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=86a744fd432e413b91b0d534bf96572f&thumb=Y'},
+  { id: 3, image: 'https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d32968623ba34ff0a593e5a257304c6f&thumb=Y'}
 ];
 
 const ReservationList = () => (
@@ -55,12 +54,14 @@ const ReservationList = () => (
 
 const InterestList = () => (
   <div>
-    <h2>Interest List</h2>
-    <ul>
+    <div className="interest-container">
       {interestData.map(item => (
-        <li key={item.id}>{item.name} - {item.interest}</li>
+        <div key={item.id} className="interest-item">
+          <img src={item.image} alt={item.title} />
+          <div className="item-title">{item.title}</div>
+        </div>
       ))}
-    </ul>
+    </div>
   </div>
 );
 

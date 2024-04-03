@@ -90,3 +90,18 @@
 .big-text {
   font-size: 18px;
 }
+
+.interest-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 30px;
+}
+
+.interest-item {
+  margin: 10px;
+}
+
+.interest-item img {
+  width: 150px; /* 이미지의 너비를 조정할 수 있습니다. */
+  height: auto; /* 높이는 자동으로 조정됩니다. */
+}
